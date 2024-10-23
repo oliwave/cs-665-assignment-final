@@ -1,3 +1,11 @@
+/**
+ * Name: Wei Wang
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 10/05/2024
+ * File Name: Player.java
+ * Description: This class is responsible for the methods and attributes of the Player.java.
+ */
+
 package edu.bu.met.cs665.state;
 
 import java.util.List;
@@ -12,6 +20,10 @@ import edu.bu.met.cs665.utils.observer.Subscriber;
 import edu.bu.met.cs665.view.DirectionButtons;
 import edu.bu.met.cs665.view.Submit;
 
+/**
+ * This is the Game class.
+ * This class is responsible for representing a Game.
+ */
 public class Player implements Subscriber {
   private static Player player;
 

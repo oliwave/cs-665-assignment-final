@@ -55,11 +55,11 @@ public class GameGrid implements Subscriber {
    */
   public void refresh() {
     gridPane.getChildren().clear();
-    for (int i = 0; i < GRID_SIZE; i++) {
-      for (int j = 0; j < GRID_SIZE; j++) {
-        Cell grid = game.getGridValue(i, j);
+    for (int x = 0; x < GRID_SIZE; x++) {
+      for (int y = 0; y < GRID_SIZE; y++) {
+        Cell grid = game.getGridValue(x, y);
         Label cell = populateLabel(grid.getName(), grid.getColor());
-        gridPane.add(cell, i, j);
+        gridPane.add(cell, x, y);
       }
     }
   }

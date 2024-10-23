@@ -37,7 +37,7 @@ public class Submit implements Publisher {
   private Game game = Game.getGame(this);
   private static Submit submit;
 
-   /**
+  /**
    * Create a Submit object.
    */
   private Submit() {
@@ -48,7 +48,7 @@ public class Submit implements Publisher {
   /**
    * The static method to get the Submit object.
    * 
-   * @return A Submit object 
+   * @return A Submit object
    */
   public static Submit getSubmit() {
     if (submit == null) {
@@ -96,8 +96,8 @@ public class Submit implements Publisher {
   /**
    * Show an alert box for game feedback and restart option.
    * 
-   * @param title The alert title
-   * @param message The message content
+   * @param title         The alert title
+   * @param message       The message content
    * @param restartOption The restart option
    */
   private void showAlert(String title, String message, boolean restartOption) {
@@ -115,11 +115,11 @@ public class Submit implements Publisher {
       System.exit(0);
     }
   }
-  
+
   /**
    * Subscribe the Submit event.
    * 
-   * @param s The subscriber 
+   * @param s The subscriber
    * @return Return true if subscription to the Submit event successfully
    */
   @Override
@@ -128,15 +128,16 @@ public class Submit implements Publisher {
       this.subscribers.add(s);
       return true;
     }
-    
+
     return false;
   }
-  
+
   /**
    * Unsubscribe the Submit event.
    * 
-   * @param s The subscriber 
-   * @return Return true if subscription to the Submit event is removed successfully
+   * @param s The subscriber
+   * @return Return true if subscription to the Submit event is removed
+   *         successfully
    */
   @Override
   public boolean unsubscribe(Subscriber s) {

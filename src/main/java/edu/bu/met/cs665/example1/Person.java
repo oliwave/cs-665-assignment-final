@@ -1,6 +1,20 @@
 /**
  * Name: Wei Wang
  * Course: CS-665 Software Designs & Patterns
+ * Date: 10/05/2024
+ * File Name: Person.java
+ * Description: This class is responsible for the methods and attributes of the Person.java.
+ */
+/**
+ * Name: Wei Wang
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 10/05/2024
+ * File Name: Person.java
+ * Description: This class is responsible for the methods and attributes of the DirectionButtons.
+ */
+/**
+ * Name: Wei Wang
+ * Course: CS-665 Software Designs & Patterns
  * Date: 10/06/2024
  * File Name: Person.java
  * Description: This class is responsible for the methods and attributes of a Person.

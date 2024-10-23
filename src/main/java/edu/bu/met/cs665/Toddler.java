@@ -2,8 +2,8 @@
  * Name: Wei Wang
  * Course: CS-665 Software Designs & Patterns
  * Date: 10/05/2024
- * File Name: Main.java
- * Description: Write a description for this class
+ * File Name: Toddler.java
+ * Description: This class is responsible for the methods and attributes of the Toddler.
  */
 
 package edu.bu.met.cs665;
