@@ -8,8 +8,8 @@
 
 package edu.bu.met.cs665.view;
 
-import edu.bu.met.cs665.state.Game;
 import edu.bu.met.cs665.state.Cell;
+import edu.bu.met.cs665.state.Game;
 import edu.bu.met.cs665.utils.observer.Publisher;
 import edu.bu.met.cs665.utils.observer.Subscriber;
 import javafx.scene.control.Label;
@@ -67,20 +67,20 @@ public class GameGrid implements Subscriber {
   /**
    * A simple method to create labels.
    * 
-   * @param text The text for the Label
+   * @param text  The text for the Label
    * @param color The background color for the Label
    * @return Return the Label
    */
   private Label populateLabel(String text, String color) {
+    String size = "-fx-pref-width: 100px; -fx-pref-height: 100px; ";
+    String borderColor = "-fx-border-color: black; ";
     Label cell = new Label(" " + text + " ");
-    cell.setStyle(
-        "-fx-pref-width: 100px; -fx-pref-height: 100px; -fx-border-color: black; -fx-alignment: center; -fx-background-color: "
-            + color);
+    cell.setStyle(size + borderColor + "-fx-alignment: center; -fx-background-color: " + color);
     return cell;
   }
 
   /**
-   * The getter method that returns the GridPane object
+   * The getter method that returns the GridPane object.
    * 
    * @return Return the gridPane
    */

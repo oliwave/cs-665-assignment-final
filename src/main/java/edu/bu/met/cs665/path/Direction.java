@@ -13,10 +13,10 @@ package edu.bu.met.cs665.path;
  * This class is responsible for representing a Direction.
  */
 public enum Direction {
-  UP("\u2191"),
-  DOWN("\u2193"),
-  LEFT("\u2190"),
-  RIGHT("\u2192");
+  UP("↑"),
+  DOWN("↓"),
+  LEFT("←"),
+  RIGHT("→");
 
   private final String direction;
 

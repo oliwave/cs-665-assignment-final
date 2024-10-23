@@ -65,14 +65,16 @@ public class MoveDisplay implements Subscriber {
    */
   private void addColorLabel(String color) {
     Label colorLabel = new Label();
+    String size = "-fx-pref-width: 30px; -fx-pref-height: 10px; ";
     colorLabel
-        .setStyle("-fx-pref-width: 30px; -fx-pref-height: 10px; -fx-border-color: red; -fx-background-color: " + color
+        .setStyle(size + "-fx-border-color: red; -fx-background-color: " + color
             + "; -fx-padding: 5px;");
     box.getChildren().add(colorLabel);
   }
 
   /**
-   * Remove all the Labels in the Hbox and reset to default after the user submits.
+   * Remove all the Labels in the Hbox and reset to default after the user
+   * submits.
    */
   public void refresh() {
     // Display of the selected moves
@@ -85,7 +87,8 @@ public class MoveDisplay implements Subscriber {
   /**
    * The Getter method for displaying directions and colors.
    * 
-   * @return Return HBox containing all of the Labels, including directions and colors
+   * @return Return HBox containing all of the Labels, including directions and
+   *         colors
    */
   public HBox getDisplayBox() {
     return this.box;

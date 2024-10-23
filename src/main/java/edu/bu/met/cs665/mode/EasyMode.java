@@ -5,12 +5,12 @@
  * File Name: EasyMode.java
  * Description: This class is responsible for the methods and attributes of the EasyMode.
  */
-package edu.bu.met.cs665.mode;
 
-import java.util.List;
+package edu.bu.met.cs665.mode;
 
 import edu.bu.met.cs665.path.Path;
 import edu.bu.met.cs665.path.Step;
+import java.util.List;
 
 /**
  * This is the DifficultMode class.

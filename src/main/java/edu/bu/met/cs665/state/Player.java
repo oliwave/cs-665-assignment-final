@@ -8,8 +8,6 @@
 
 package edu.bu.met.cs665.state;
 
-import java.util.List;
-
 import edu.bu.met.cs665.path.Color;
 import edu.bu.met.cs665.path.Direction;
 import edu.bu.met.cs665.path.Location;
@@ -19,6 +17,7 @@ import edu.bu.met.cs665.utils.observer.Publisher;
 import edu.bu.met.cs665.utils.observer.Subscriber;
 import edu.bu.met.cs665.view.DirectionButtons;
 import edu.bu.met.cs665.view.Submit;
+import java.util.List;
 
 /**
  * This is the Game class.
@@ -30,8 +29,8 @@ public class Player implements Subscriber {
   private Path path;
   private DirectionButtons buttons = DirectionButtons.getDirectionButtons();
   private Submit submit;
-  private int x;
-  private int y;
+  private int locX;
+  private int locY;
 
   /**
    * The static method that gets the Player object.
@@ -63,8 +62,8 @@ public class Player implements Subscriber {
    * Only triggered when restarting or initializing the game.
    */
   private void refresh() {
-    this.x = 0;
-    this.y = 0;
+    this.locX = 0;
+    this.locY = 0;
     this.path = new Path();
   }
 
@@ -76,20 +75,22 @@ public class Player implements Subscriber {
 
     switch (d) {
       case UP:
-        y--;
-        addStep(d, x, y);
+        locY--;
+        addStep(d, locX, locY);
         break;
       case DOWN:
-        y++;
-        addStep(d, x, y);
+        locY++;
+        addStep(d, locX, locY);
         break;
       case LEFT:
-        x--;
-        addStep(d, x, y);
+        locX--;
+        addStep(d, locX, locY);
         break;
       case RIGHT:
-        x++;
-        addStep(d, x, y);
+        locX++;
+        addStep(d, locX, locY);
+        break;
+      default:
         break;
     }
 

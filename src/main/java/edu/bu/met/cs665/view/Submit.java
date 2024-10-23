@@ -8,10 +8,6 @@
 
 package edu.bu.met.cs665.view;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 import edu.bu.met.cs665.mode.DifficultMode;
 import edu.bu.met.cs665.mode.EasyMode;
 import edu.bu.met.cs665.mode.Mode;
@@ -20,6 +16,9 @@ import edu.bu.met.cs665.state.GameController;
 import edu.bu.met.cs665.state.Player;
 import edu.bu.met.cs665.utils.observer.Publisher;
 import edu.bu.met.cs665.utils.observer.Subscriber;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -84,10 +83,13 @@ public class Submit implements Publisher {
   private void submit(Mode m) {
     gc = new GameController(m);
 
+    String successMsg = "Congratulations! You've followed the correct path and won the game.";
+    String failureMsg = "Oops! The path you entered is incorrect. Better luck next time!";
+
     if (gc.validatePath(game.getPath(), player.getPath())) {
-      showAlert("Success", "Congratulations! You've followed the correct path and won the game.", true);
+      showAlert("Success", successMsg, true);
     } else {
-      showAlert("Failure", "Oops! The path you entered is incorrect. Better luck next time!", true);
+      showAlert("Failure", failureMsg, true);
     }
 
     notifySubscribers();

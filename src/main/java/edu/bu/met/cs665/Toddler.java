@@ -10,8 +10,8 @@ package edu.bu.met.cs665;
 
 import edu.bu.met.cs665.view.DirectionButtons;
 import edu.bu.met.cs665.view.GameGrid;
-import edu.bu.met.cs665.view.Submit;
 import edu.bu.met.cs665.view.MoveDisplay;
+import edu.bu.met.cs665.view.Submit;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -52,8 +52,13 @@ public class Toddler extends Application {
     // Center the grid in the layout
     VBox gridContainer = new VBox(gameGrid.getGridPane());
 
-    VBox vbox = new VBox(20, gridContainer, directionButtons.getButtons(), moveDisplay.getDisplayBox(),
-        submit.getSubmitEasyButton(), submit.getSubmitHardButton());
+    VBox vbox = new VBox(
+        20,
+        gridContainer,
+        directionButtons.getButtons(),
+        moveDisplay.getDisplayBox(),
+        submit.getSubmitEasyButton(),
+        submit.getSubmitHardButton());
     vbox.setPadding(new Insets(10));
 
     Scene scene = new Scene(vbox, 400, 450);

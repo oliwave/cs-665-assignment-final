@@ -5,6 +5,7 @@
  * File Name: Subscriber.java
  * Description: This class is responsible for the methods and attributes of the Subscriber.
  */
+
 package edu.bu.met.cs665.utils.observer;
 
 /**

@@ -8,13 +8,12 @@
 
 package edu.bu.met.cs665.view;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.bu.met.cs665.path.Color;
 import edu.bu.met.cs665.path.Direction;
 import edu.bu.met.cs665.utils.observer.Publisher;
 import edu.bu.met.cs665.utils.observer.Subscriber;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -54,27 +53,38 @@ public class DirectionButtons implements Publisher {
   private DirectionButtons() {
     // Buttons for selecting directions
     Button upButton = new Button(Direction.UP.getDirection());
-    Button downButton = new Button(Direction.DOWN.getDirection());
-    Button leftButton = new Button(Direction.LEFT.getDirection());
-    Button rightButton = new Button(Direction.RIGHT.getDirection());
-    Button blueButton = new Button();
-    Button yellowButton = new Button();
+    upButton.setOnAction(e -> addMove(Direction.UP));
 
+    Button downButton = new Button(Direction.DOWN.getDirection());
+    downButton.setOnAction(e -> addMove(Direction.DOWN));
+
+    Button leftButton = new Button(Direction.LEFT.getDirection());
+    leftButton.setOnAction(e -> addMove(Direction.LEFT));
+
+    Button rightButton = new Button(Direction.RIGHT.getDirection());
+    rightButton.setOnAction(e -> addMove(Direction.RIGHT));
+
+    String borderColor = "-fx-border-color: black; ";
+
+    Button blueButton = new Button();
     blueButton.setPrefHeight(10);
     blueButton.setPrefWidth(30);
-    blueButton.setStyle("-fx-border-color: black; -fx-background-color: " + Color.BLUE.getColor());
+    blueButton.setStyle(borderColor + "-fx-background-color: " + Color.BLUE.getColor());
+    blueButton.setOnAction(e -> addColor(Color.BLUE));
+
+    Button yellowButton = new Button();
     yellowButton.setPrefHeight(10);
     yellowButton.setPrefWidth(30);
-    yellowButton.setStyle("-fx-border-color: black; -fx-background-color: " + Color.YELLOW.getColor());
-
-    upButton.setOnAction(e -> addMove(Direction.UP));
-    downButton.setOnAction(e -> addMove(Direction.DOWN));
-    leftButton.setOnAction(e -> addMove(Direction.LEFT));
-    rightButton.setOnAction(e -> addMove(Direction.RIGHT));
-    blueButton.setOnAction(e -> addColor(Color.BLUE));
+    yellowButton.setStyle(borderColor + "-fx-background-color: " + Color.YELLOW.getColor());
     yellowButton.setOnAction(e -> addColor(Color.YELLOW));
 
-    buttons.getChildren().addAll(leftButton, downButton, rightButton, upButton, blueButton, yellowButton);
+    buttons.getChildren().addAll(
+        leftButton,
+        downButton,
+        rightButton,
+        upButton,
+        blueButton,
+        yellowButton);
     buttons.setAlignment(Pos.CENTER);
   }
 
@@ -112,7 +122,7 @@ public class DirectionButtons implements Publisher {
   /**
    * The getter method for getting the current direction.
    * 
-   * @return The current direction 
+   * @return The current direction
    */
   public Direction getCurDirection() {
     return this.curDirection;
@@ -121,7 +131,7 @@ public class DirectionButtons implements Publisher {
   /**
    * The getter method for getting the current color.
    * 
-   * @return The current color 
+   * @return The current color
    */
   public Color getCurColor() {
     return this.curColor;
@@ -130,7 +140,8 @@ public class DirectionButtons implements Publisher {
   /**
    * The getter method to see if isColor is true.
    * 
-   * @return Return true if the latest operation from the user is clicking the color button
+   * @return Return true if the latest operation from the user is clicking the
+   *         color button
    */
   public Boolean isColor() {
     return isColor;
@@ -139,7 +150,7 @@ public class DirectionButtons implements Publisher {
   /**
    * Subscribe the button-clicked events.
    * 
-   * @param s The subscriber 
+   * @param s The subscriber
    * @return Return true if subscription to the button-clicked event successfully
    */
   @Override
@@ -155,8 +166,9 @@ public class DirectionButtons implements Publisher {
   /**
    * Unsubscribe the button-clicked events.
    * 
-   * @param s The subscriber 
-   * @return Return true if subscription to the button-clicked event is removed successfully
+   * @param s The subscriber
+   * @return Return true if subscription to the button-clicked event is removed
+   *         successfully
    */
   @Override
   public boolean unsubscribe(Subscriber s) {

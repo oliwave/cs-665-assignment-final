@@ -8,10 +8,9 @@
 
 package edu.bu.met.cs665.mode;
 
-import java.util.List;
-
 import edu.bu.met.cs665.path.Path;
 import edu.bu.met.cs665.path.Step;
+import java.util.List;
 
 /**
  * This is the DifficultMode class.

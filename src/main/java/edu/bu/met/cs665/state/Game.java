@@ -8,9 +8,6 @@
 
 package edu.bu.met.cs665.state;
 
-import java.util.List;
-import java.util.Random;
-
 import edu.bu.met.cs665.path.Color;
 import edu.bu.met.cs665.path.Direction;
 import edu.bu.met.cs665.path.Location;
@@ -20,6 +17,8 @@ import edu.bu.met.cs665.utils.observer.Publisher;
 import edu.bu.met.cs665.utils.observer.Subscriber;
 import edu.bu.met.cs665.view.GameGrid;
 import edu.bu.met.cs665.view.Submit;
+import java.util.List;
+import java.util.Random;
 
 /**
  * This is the Game class.
@@ -35,8 +34,10 @@ public class Game implements Subscriber {
   private static final String AGENT = "Player";
 
   private Cell[][] grid;
-  private int agentX, agentY;
-  private int finalX, finalY;
+  private int agentX;
+  private int agentY;
+  private int finalX;
+  private int finalY;
   private Path path;
 
   private Submit submit;
@@ -112,7 +113,8 @@ public class Game implements Subscriber {
    */
   private void generateRandomPath() {
     path = new Path();
-    int x = 0, y = 0;
+    int x = 0;
+    int y = 0;
 
     Random rand = new Random();
 
@@ -151,8 +153,8 @@ public class Game implements Subscriber {
    */
   private void displayPathOnGrid() {
     for (Step step : path.getSteps()) {
-      int x = step.getLocation().getX();
-      int y = step.getLocation().getY();
+      int x = step.getLocation().getLocX();
+      int y = step.getLocation().getLocY();
       grid[x][y] = new Cell(step.getColor());
     }
   }

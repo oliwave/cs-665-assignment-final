@@ -13,35 +13,35 @@ package edu.bu.met.cs665.path;
  * This class is responsible for representing a Location.
  */
 public class Location {
-  private int x = 0;
-  private int y = 0;
+  private int locX = 0;
+  private int locY = 0;
 
   /**
-   * Create the location with x and y.
+   * Create the location with locX and locY.
    * 
-   * @param x The x of the location
-   * @param y The y of the location
+   * @param locX The locX of the location
+   * @param locY The locY of the location
    */
-  public Location(int x, int y) {
-    this.x = x;
-    this.y = y;
+  public Location(int locX, int locY) {
+    this.locX = locX;
+    this.locY = locY;
   }
 
   /**
-   * The getter method for getting x
+   * The getter method for getting locX.
    * 
-   * @return Return x
+   * @return Return locX
    */
-  public int getX() {
-    return this.x;
+  public int getLocX() {
+    return this.locX;
   }
 
   /**
-   * The getter method for getting y
+   * The getter method for getting locY.
    * 
-   * @return Return y
+   * @return Return locY
    */
-  public int getY() {
-    return this.y;
+  public int getLocY() {
+    return this.locY;
   }
 }
