@@ -3,7 +3,7 @@
  * Course: CS-665 Software Designs & Patterns
  * Date: 10/05/2024
  * File Name: Path.java
- * Description: This class is responsible for the methods and attributes of the Path.java.
+ * Description: This class is responsible for the methods and attributes of the Path.
  */
 
 package edu.bu.met.cs665.path;

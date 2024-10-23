@@ -3,7 +3,7 @@
  * Course: CS-665 Software Designs & Patterns
  * Date: 10/05/2024
  * File Name: GameController.java
- * Description: This class is responsible for the methods and attributes of the GameController.java.
+ * Description: This class is responsible for the methods and attributes of the GameController.
  */
 
 package edu.bu.met.cs665.state;

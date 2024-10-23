@@ -3,7 +3,7 @@
  * Course: CS-665 Software Designs & Patterns
  * Date: 10/05/2024
  * File Name: Step.java
- * Description: This class is responsible for the methods and attributes of the Step.java.
+ * Description: This class is responsible for the methods and attributes of the Step.
  */
 
 package edu.bu.met.cs665.path;
