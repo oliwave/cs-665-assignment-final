@@ -9,6 +9,8 @@
 # Assignment Overview
 Please add a paragraph or two overviewing the objectives of the assignment.
 
+- This final project showcases how to compose a couple of design patterns in one app. To elaborate, here we use the Toddler UI app as the example to demonstrate the complex logic of managing UI states and components in a well-organized fashion.
+
 # GitHub Repository Link:
 https://github.com/oliwave/cs-665-assignment-final
 
@@ -17,14 +19,96 @@ https://github.com/oliwave/cs-665-assignment-final
 
 For each assignment, please answer the following:
 
-- Explain the level of flexibility in your implementation, including how new object types can
-be easily added or removed in the future.
-- Discuss the simplicity and understandability of your implementation, ensuring that it is
-easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
-- If applicable, mention any design patterns you have used and explain why they were
-chosen.
+### Explain the level of flexibility in your implementation, including how new object types can be easily added or removed in the future.
+  - The game is flexible enough to provide any kind of playing modes by implementing the `Mode` interface without refactoring the existing codebase
+  - This highly comply with the open-closed principle
+### Discuss the simplicity and understandability of your implementation, ensuring that it is easy for others to read and maintain.
+  - The UI state mangement logic is completely decoupled with the UI component itself, so it's easier to maintain logic and UI separately
+  - Also, state changes are captured by implementing the **Observer pattern**. That is, the connections between UI and states are weak and do not need to be aware of the exact type of objects.
+### Describe how you have avoided duplicated code and why it is important.
+  - The `Mode` interface enables subclasses to encapsulate specific implementations for reusability without copying the implementation to each client code that needs it
+### If applicable, mention any design patterns you have used and explain why they were chosen.
+  - **Observer Pattern**
+    - Handy for managing UI and its state
+    - For example, when `Submit` button is clicked, the `Submit` object as the `Publisher` will notify all the `Subscriber`s, such as `Player` and `Game` to reflect, without knowing their explicit types and actions they will take.
+  - **Singleton Pattern**
+    - `DirectionButtons` and `Submit`, etc., are singleton because we don't need a second instance of these types.
+  - **Delegation Pattern**
+    - The implementation of each game mode, such as `EasyMode` and `DifficultMode`, is abstracted by `Mode` interface, and then the `GameController` class as the **delegator** implementing `Mode` interface so that every *validatePath* request that comes into `GameController` is delegated to the underlying class
 
+# Toddler App
+
+# Prerequesite
+
+- Use Java SDK 17 due to UI compatible with JavaFX
+
+# Run
+
+```
+mvn clean install
+mvn clean javafx:run
+```
+
+# Get Started
+
+The application leverages JavaFX as the UI framework to develop the toddler game.
+
+## Start Game
+
+The game will create an auto-generated random route for you.
+
+![alt text](<images/init.png>)
+- Click the "🚀" button to start the game
+- ![alt text](images/start.png)
+
+## Play Game
+
+- Players need to follow the route until they get to the `Final`
+- The game offers you two kinds of level: Easy and Hard
+
+### Easy mode
+
+- Players only need to follow the route by clicking the below direction buttons
+  - ![alt text](images/direction.png)
+
+- After this step, you can click **"Easy"** button to see if inputs are 100% match with the game route
+  - If you pass the test, the success message is dispalyed
+    - ![alt text](images/success.png)
+
+### Hard mode
+
+- Players must click the direction and color buttons for each step
+  - ![alt text](images/hard.png)
+- After you finish, click the "Hard" button to see if you pass the test
+
+## Restart or Finish
+
+Players can decide to play again or exit every time the game is finished.
+
+![alt text](images/failure.png)
+
+# Code Insights
+
+## Folder structures
+
+### mode
+- This folder is dedicated to organize the game mode
+- Each game mode has its own implementation by implementing the `Mode` interface
+### path
+
+- Responsible for managing the object structure of `Path` by favoring composition over inheritance
+- `Path` has `Step`s and each `Step` has a `Direction`, `Color` and `Location`
+
+### state
+
+- Decouple the logic from the UI components provided by JavaFX
+
+### view
+- Controlling all the UI widgets
+- To do so, we harness the power of the **Observer pattern**
+- That is, whenever a UI component state is changed, other components interested in the state changes are notified and thus reflect on it
+### util
+- Helper classes that may not directly correlated to the game itself
 
 # Maven Commands
 
