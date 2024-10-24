@@ -87,9 +87,9 @@ public class Submit implements Publisher {
     String failureMsg = "Oops! The path you entered is incorrect. Better luck next time!";
 
     if (gc.validatePath(game.getPath(), player.getPath())) {
-      showAlert("Success", successMsg, true);
+      showAlert("Success", successMsg);
     } else {
-      showAlert("Failure", failureMsg, true);
+      showAlert("Failure", failureMsg);
     }
 
     notifySubscribers();
@@ -98,15 +98,14 @@ public class Submit implements Publisher {
   /**
    * Show an alert box for game feedback and restart option.
    * 
-   * @param title         The alert title
-   * @param message       The message content
-   * @param restartOption The restart option
+   * @param title   The alert title
+   * @param msg The msg content
    */
-  private void showAlert(String title, String message, boolean restartOption) {
+  private void showAlert(String title, String msg) {
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle(title);
     alert.setHeaderText(null);
-    alert.setContentText(message + "\nWould you like to play again?");
+    alert.setContentText(msg + "\nWould you like to play again?");
 
     ButtonType yesButton = new ButtonType("Yes");
     ButtonType noButton = new ButtonType("No");

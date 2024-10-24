@@ -53,7 +53,7 @@ public class GameGrid implements Subscriber {
   /**
    * Reset all the cells in the grid to the initial state.
    */
-  public void refresh() {
+  private void refresh() {
     gridPane.getChildren().clear();
     for (int x = 0; x < GRID_SIZE; x++) {
       for (int y = 0; y < GRID_SIZE; y++) {

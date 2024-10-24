@@ -76,7 +76,7 @@ public class MoveDisplay implements Subscriber {
    * Remove all the Labels in the Hbox and reset to default after the user
    * submits.
    */
-  public void refresh() {
+  private void refresh() {
     // Display of the selected moves
     box.getChildren().clear();
     box.setPadding(new Insets(10));
