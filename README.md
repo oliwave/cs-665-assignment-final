@@ -110,6 +110,10 @@ Players can decide to play again or exit every time the game is finished.
 ### util
 - Helper classes that may not directly correlated to the game itself
 
+# Presentation
+
+[Toddler Game](https://docs.google.com/presentation/d/1zbMT4btCnMK2DXz0KE83w48GJXJErNvFOfRLf3IZ_4k/edit?usp=sharing)
+
 # Maven Commands
 
 We'll use Apache Maven to compile and run this project. You'll need to install Apache Maven (https://maven.apache.org/) on your system. 
@@ -190,7 +194,3 @@ mvn checkstyle:checkstyle
 
 The HTML page will be found at the following location:
 `target/site/checkstyle.html`
-
-
-
-

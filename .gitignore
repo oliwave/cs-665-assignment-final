@@ -2,3 +2,4 @@ target
 .idea/
 JavaProjectTemplate.iml
 .vscode
+.DS_STORE
